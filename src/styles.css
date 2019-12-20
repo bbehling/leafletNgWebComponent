@@ -1,3 +1,8 @@
+/*
+  Need to import leaflet.css here and not in angular.json styles prop
+  so the stylesheet will be compiled when in production mode
+*/
+
 @import "../node_modules/leaflet/dist/leaflet.css";
 
 html,
