@@ -29,16 +29,12 @@ export class LeafletComponent implements OnInit {
   }
 
   getData = () => {
-    this.mapService
-      .getData(
-        "http://sspcodingexercise.s3-website-us-west-2.amazonaws.com/Sample.json"
-      )
-      .subscribe(response => {
-        this.title = response["Description"];
-        this.features = response["FeatureData"];
+    this.mapService.getData("../../assets/14ners.json").subscribe(response => {
+      this.title = response["mapTitle"];
+      this.features = response["featureData"];
 
-        this.setMarkers();
-      });
+      this.setMarkers();
+    });
   };
 
   setMarkers() {
@@ -52,8 +48,8 @@ export class LeafletComponent implements OnInit {
     });
 
     this.features.forEach(element => {
-      let x = element["geometry"]["coordinates"][0];
-      let y = element["geometry"]["coordinates"][1];
+      let x = element["coords"]["lon"];
+      let y = element["coords"]["lat"];
       L.marker([y, x], { icon: icon }).addTo(this.map);
 
       markerArray.push([y, x]);

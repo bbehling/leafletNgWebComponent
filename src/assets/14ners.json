@@ -1,0 +1,75 @@
+{
+  "mapTitle": "14 Tallest CO 14ners",
+  "featureData": [
+    {
+      "name": "Mt. Elbert",
+      "coords": { "lat": 39.118075, "lon": -106.445417 },
+      "elevation": 4399.232
+    },
+    {
+      "name": "Mt. Massive",
+      "coords": { "lat": 39.187298, "lon": -106.475548 },
+      "elevation": 4395.574
+    },
+    {
+      "name": "Mt. Harvard",
+      "coords": { "lat": 38.924328, "lon": -106.320618 },
+      "elevation": 4395.269
+    },
+    {
+      "name": "Blanca Peak",
+      "coords": { "lat": 37.577473, "lon": -105.485443 },
+      "elevation": 4372.409
+    },
+    {
+      "name": "La Plata Peak",
+      "coords": { "lat": 39.029251, "lon": -106.473145 },
+      "elevation": 4369.666
+    },
+    {
+      "name": "Uncompahgre Peak",
+      "coords": { "lat": 38.071507, "lon": -107.462166 },
+      "elevation": 4361.436
+    },
+    {
+      "name": "Crestone Peak",
+      "coords": { "lat": 37.966972, "lon": -105.585304 },
+      "elevation": 4356.864
+    },
+    {
+      "name": "Mt. Lincoln",
+      "coords": { "lat": 39.351391, "lon": -106.111404 },
+      "elevation": 4354.426
+    },
+    {
+      "name": "Grays Peak",
+      "coords": { "lat": 39.63382, "lon": -105.81752 },
+      "elevation": 4349.549
+    },
+    {
+      "name": "Mt. Antero",
+      "coords": { "lat": 38.674088, "lon": -106.246201 },
+      "elevation": 4349.244
+    },
+    {
+      "name": "Torreys Peak",
+      "coords": { "lat": 39.642742, "lon": -105.821259 },
+      "elevation": 4348.634
+    },
+    {
+      "name": "Castle Peak",
+      "coords": { "lat": 39.009647, "lon": -106.86144 },
+      "elevation": 4348.025
+    },
+    {
+      "name": "Quandary Peak",
+      "coords": { "lat": 39.397236, "lon": -106.10643 },
+      "elevation": 4348.025
+    },
+    {
+      "name": "Mt. Evans",
+      "coords": { "lat": 39.58836, "lon": -105.643333 },
+      "elevation": 4347.72
+    }
+  ]
+}
