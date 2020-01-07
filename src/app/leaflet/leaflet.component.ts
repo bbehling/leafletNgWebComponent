@@ -52,7 +52,8 @@ export class LeafletComponent implements OnInit {
     let markerArray = [];
 
     var icon = L.icon({
-      iconUrl: require("../../assets/marker-icon-2x.png"),
+      iconUrl:
+        "https://cdn.jsdelivr.net/gh/bbehling/leafletNgWebComponent/elements/marker-icon-2x.png",
       iconSize: [27, 37]
     });
 
