@@ -23,7 +23,12 @@ export class LeafletComponent implements OnInit {
       zoom: 5
     });
 
-    esri.basemapLayer("Streets").addTo(this.map);
+    //esri.basemapLayer("Streets").addTo(this.map);
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution:
+        '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(this.map);
 
     this.getData();
   }
@@ -50,7 +55,13 @@ export class LeafletComponent implements OnInit {
     this.features.forEach(element => {
       let x = element["coords"]["lon"];
       let y = element["coords"]["lat"];
-      L.marker([y, x], { icon: icon }).addTo(this.map);
+      L.marker([y, x], { icon: icon })
+        .addTo(this.map)
+        .bindPopup(
+          `<b>${element["name"]}</b><br>Elevation: ${(
+            element["elevation"] * 3.28084
+          ).toFixed(2)}`
+        );
 
       markerArray.push([y, x]);
     });
