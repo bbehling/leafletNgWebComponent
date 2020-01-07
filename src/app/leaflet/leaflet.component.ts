@@ -34,12 +34,16 @@ export class LeafletComponent implements OnInit {
   }
 
   getData = () => {
-    this.mapService.getData("../../assets/14ners.json").subscribe(response => {
-      this.title = response["mapTitle"];
-      this.features = response["featureData"];
+    this.mapService
+      .getData(
+        "https://cdn.jsdelivr.net/gh/bbehling/leafletNgWebComponent/elements/14ners.json"
+      )
+      .subscribe(response => {
+        this.title = response["mapTitle"];
+        this.features = response["featureData"];
 
-      this.setMarkers();
-    });
+        this.setMarkers();
+      });
   };
 
   setMarkers() {
