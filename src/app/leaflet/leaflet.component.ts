@@ -23,8 +23,6 @@ export class LeafletComponent implements OnInit {
       zoom: 5
     });
 
-    //esri.basemapLayer("Streets").addTo(this.map);
-
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution:
         '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -36,10 +34,10 @@ export class LeafletComponent implements OnInit {
   getData = () => {
     this.mapService
       .getData(
-        "https://cdn.jsdelivr.net/gh/bbehling/leafletNgWebComponent/elements/14ners.json"
+        "https://cdn.jsdelivr.net/gh/bbehling/leafletNgWebComponent@1.0.4/elements/14ners.json"
       )
       .subscribe(response => {
-        this.title = response["mapTitle"];
+        this.title = response["properties"].mapTitle;
         this.features = response["features"];
 
         this.setMarkers();
