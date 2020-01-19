@@ -13,7 +13,7 @@ export class LeafletComponent implements OnInit {
   constructor(private mapService: MapService) {}
 
   title = "";
-  features = [];
+  features;
   map = null;
 
   ngOnInit() {
@@ -40,7 +40,7 @@ export class LeafletComponent implements OnInit {
       )
       .subscribe(response => {
         this.title = response["mapTitle"];
-        this.features = response["featureData"];
+        this.features = response["features"];
 
         this.setMarkers();
       });
@@ -51,13 +51,28 @@ export class LeafletComponent implements OnInit {
     // https://stackoverflow.com/questions/56411497/leaflet-marker-not-found-production-env-angular-7
     let markerArray = [];
 
-    var icon = L.icon({
+    const icon: any = L.icon({
       iconUrl:
         "https://cdn.jsdelivr.net/gh/bbehling/leafletNgWebComponent/elements/marker-icon-2x.png",
       iconSize: [27, 37]
     });
 
+    L.geoJSON(this.features, {
+      pointToLayer: (feature, latlng) => {
+        markerArray.push([latlng.lat, latlng.lng]);
+        //debugger;
+        return L.marker(latlng, { icon: icon })
+          .addTo(this.map)
+          .bindPopup(
+            `<b>${feature.properties.name}</b><br>Elevation: ${(
+              feature.properties.elevation * 3.28084
+            ).toFixed(2)}`
+          );
+      }
+    }).addTo(this.map);
+    /*
     this.features.forEach(element => {
+      debugger;
       let x = element["coords"]["lon"];
       let y = element["coords"]["lat"];
       L.marker([y, x], { icon: icon })
@@ -70,7 +85,7 @@ export class LeafletComponent implements OnInit {
 
       markerArray.push([y, x]);
     });
-
+ */
     this.map.fitBounds(markerArray);
   }
 }
