@@ -1,6 +1,6 @@
 # Leaflet Component
 
-This project is an example of how to build a Leaeflet web component using Angular Elements.
+This project is an example of how to build a Leaflet web component using Angular Elements.
 
 ## Development server
 
